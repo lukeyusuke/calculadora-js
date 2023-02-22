@@ -6,8 +6,14 @@ function calculadora(){
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             inputCalculo.value += button.value;
+
+            deletaNumero(button);
         })
     })
+
+    const deletaNumero = (btn) => {
+        if(btn.value === 'C') inputCalculo.value = "";
+    }
 }
 
 calculadora();

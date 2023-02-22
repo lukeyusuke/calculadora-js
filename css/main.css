@@ -14,7 +14,7 @@ body {
   justify-content: center;
 }
 
-.container {
+.calculator {
   background-color: #d7c9ed;
   border: 1px solid none;
   border-radius: 2rem;
@@ -22,14 +22,14 @@ body {
   height: 532px;
   max-width: 300px;
 }
-.container-title {
+.calculator-title {
   color: #FFF;
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 1rem;
 }
-.container input {
+.calculator input {
   background-color: transparent;
   border: none;
   color: #FFF;
@@ -41,12 +41,12 @@ body {
   height: 50px;
   width: 100%;
 }
-.container-buttons {
+.calculator-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
 }
-.container-buttons button {
+.calculator-buttons button {
   background-color: #d7c9ed;
   border: none;
   color: #FFF;
@@ -54,20 +54,20 @@ body {
   font-size: 1.25rem;
   padding: 1rem;
 }
-.container-buttons button:hover {
+.calculator-buttons button:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.container-buttons button:nth-child(17) {
+.calculator-buttons button:nth-child(17) {
   border-radius: 0 0 0 2rem;
 }
-.container-buttons button:last-child {
+.calculator-buttons button:last-child {
   background-color: #6900FE;
   border-radius: 0 0 2rem 0;
 }
-.container-buttons .btn-style {
+.calculator-buttons .btn-style {
   color: #6900FE;
 }
-.container-buttons .operation {
+.calculator-buttons .operation {
   background-color: rgba(182, 143, 236, 0.1);
 }
 

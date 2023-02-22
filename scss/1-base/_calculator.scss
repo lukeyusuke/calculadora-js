@@ -1,7 +1,7 @@
 @use '../0-plugins/imports';
 @use '../1-base/variables';
 
-.container{
+.calculator{
     background-color: variables.$bg-color;
     border: 1px solid none;
     border-radius: 2rem;

@@ -10,28 +10,32 @@
     <body>
         <div class="calculator">
             <h3 class="calculator-title">Calculadora</h3>
+            <div class="calculator-operation">
+                <div data-previous-operand class="previous-operand"></div>
+                <div data-current-operand class="current-operand"></div>
+            </div>
             <input class="calc" type="text"/>
             <div class="calculator-buttons">
-                <button class="btn" value="C"> C </button>
-                <button class="btn" value="("> ( </button>
-                <button class="btn" value=")"> ) </button>
-                <button class="btn btn-style operation" value="÷"> ÷ </button>
-                <button class="btn btn-style" value="7"> 7 </button>
-                <button class="btn btn-style" value="8"> 8 </button>
-                <button class="btn btn-style" value="9"> 9 </button>
-                <button class="btn btn-style operation" value="x"> x </button>
-                <button class="btn btn-style" value="4"> 4 </button>
-                <button class="btn btn-style" value="5"> 5 </button>
-                <button class="btn btn-style" value="6"> 6 </button>
-                <button class="btn btn-style operation" value="+"> + </button>
-                <button class="btn btn-style" value="1"> 1 </button>
-                <button class="btn btn-style" value="2"> 2 </button>
-                <button class="btn btn-style" value="3"> 3 </button>
-                <button class="btn btn-style operation" value="-"> - </button>
-                <button class="btn" value="<"> < </button>
-                <button class="btn-style" value="0"> 0 </button>
-                <button class="btn"> . </button>
-                <button class="btn operation"> = </button>
+                <button data-clear class="btn"> C </button>
+                <button class="btn"> ( </button>
+                <button class="btn"> ) </button>
+                <button data-operator class="btn btn-style"> ÷ </button>
+                <button data-number class="btn btn-style"> 7 </button>
+                <button data-number class="btn btn-style"> 8 </button>
+                <button data-number class="btn btn-style"> 9 </button>
+                <button data-operator class="btn btn-style"> x </button>
+                <button data-number class="btn btn-style"> 4 </button>
+                <button data-number class="btn btn-style"> 5 </button>
+                <button data-number class="btn btn-style"> 6 </button>
+                <button data-operator class="btn btn-style"> + </button>
+                <button data-number class="btn btn-style"> 1 </button>
+                <button data-number class="btn btn-style"> 2 </button>
+                <button data-number class="btn btn-style"> 3 </button>
+                <button data-operator class="btn btn-style"> - </button>
+                <button data-delete class="btn"> DEL </button>
+                <button data-number class="btn-style"> 0 </button>
+                <button data-operator class="btn"> . </button>
+                <button data-equals class="btn"> = </button>
             </div>
         </div>
         <script src="js/index.js"></script>

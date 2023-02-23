@@ -1,22 +1,10 @@
-// pega os elementos que vamos mexer
-function calculadora(){
-    const inputCalculo = document.querySelector('.calc');
-    const buttons = document.querySelectorAll('.btn');
+// Pega os elementos que vamos utilizar
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            inputCalculo.value += button.value;
+const previousOperand = document.querySelector('[data-previous-operand]');
+const currentOperand = document.querySelector('[data-current-operand]');
 
-            deletaNumero(button);
-        })
-    })
-
-    const deletaNumero = (btn) => {
-        if(btn.value === 'C') inputCalculo.value = "";
-    }
-}
-
-calculadora();
-
-// Ter o evento de clique em cada um dos botões através do forEach
-// Descobrir se o botão é uma operação ou não
+const numberBtn = document.querySelectorAll('[data-number]');
+const operatorBtn = document.querySelectorAll('[data-operator]');
+const deleteBtn = document.querySelector('[data-delete]');
+const clearBtn = document.querySelector('[data-clear]');
+const equalsBtn = document.querySelector('[data-equals]');

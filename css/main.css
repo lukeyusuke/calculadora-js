@@ -27,7 +27,13 @@ body {
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 1rem;
+  padding: 1rem 0 2rem 1rem;
+}
+.calculator-operation {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  color: #FFF;
 }
 .calculator input {
   background-color: transparent;
@@ -44,7 +50,7 @@ body {
 .calculator-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1.74fr;
 }
 .calculator-buttons button {
   background-color: #d7c9ed;

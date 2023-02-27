@@ -6,3 +6,13 @@ const btnEquals = document.querySelector('[data-equals]');
 
 const previousOperand = document.querySelector('[data-previous-operand]'); 
 const currentOperand = document.querySelector('[data-current-operand]');
+
+class calculator {
+    constructor(previousOperandText, currentOperandText){
+        this.previousOperandText = previousOperandText;
+        this.currentOperandText = currentOperandText;
+    }
+}
+
+const calc = calculator(previousOperand, currentOperand);
+

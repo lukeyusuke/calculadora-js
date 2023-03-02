@@ -36,7 +36,8 @@ class Calculator {
 
     chooseOperation(){    
         let operation = "";
-    
+
+        
         if(previousOperand.innerText.includes("+")){
             operation = '+';
         } else if (previousOperand.innerText.includes("-")){
@@ -49,28 +50,33 @@ class Calculator {
 
         this.calculate(operation);
     }
-
+    
     calculate(operation){
         const _previousOperand = parseFloat(this.previousOperand.innerText);
         const _currentOperand = parseFloat(this.currentOperand.innerText);
 
-        switch(operation){
-            case '+':
-                this.previousOperand.innerText = `${_previousOperand} + ${_currentOperand} =`;
-                this.currentOperand.innerText = _previousOperand + _currentOperand;
-            break;
-            case '-':
-                this.previousOperand.innerText = `${_previousOperand} - ${_currentOperand} =`;
-                this.currentOperand.innerText = _previousOperand - _currentOperand;
-            break;
-            case 'x':
-                this.previousOperand.innerText = `${_previousOperand} x ${_currentOperand} =`;
-                this.currentOperand.innerText = _previousOperand * _currentOperand;
-            break;
-            case '÷':
-                this.previousOperand.innerText = `${_previousOperand} ÷ ${_currentOperand} =`;
-                this.currentOperand.innerText = _previousOperand / _currentOperand;
-            break;
+        if (isNaN(_previousOperand) || isNaN(_currentOperand)){
+            this.previousOperand.innerText = "";
+            this.currentOperand.innerText = 'Conta inválida';
+        }else{
+            switch(operation){
+                case '+':
+                    this.previousOperand.innerText = `${_previousOperand} + ${_currentOperand} =`;
+                    this.currentOperand.innerText = _previousOperand + _currentOperand;
+                break;
+                case '-':
+                    this.previousOperand.innerText = `${_previousOperand} - ${_currentOperand} =`;
+                    this.currentOperand.innerText = _previousOperand - _currentOperand;
+                break;
+                case 'x':
+                    this.previousOperand.innerText = `${_previousOperand} x ${_currentOperand} =`;
+                    this.currentOperand.innerText = _previousOperand * _currentOperand;
+                break;
+                case '÷':
+                    this.previousOperand.innerText = `${_previousOperand} ÷ ${_currentOperand} =`;
+                    this.currentOperand.innerText = _previousOperand / _currentOperand;
+                break;
+            }
         }
     }
 

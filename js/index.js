@@ -56,6 +56,10 @@ class Calculator {
             this.currentOperand.innerText = _previousOperand / _currentOperand;
         }
     }
+
+    delete(){
+        this.currentOperand.innerText = this.currentOperand.innerText.toString().slice(0, -1);
+    }
 }
 
 const calculator = new Calculator(previousOperand, currentOperand);
@@ -66,11 +70,14 @@ for(const button of buttons){
     })
 }
 
-// função que deleta o valor
 btnAllClear.addEventListener('click', () => {
     calculator.clear();
 })
 
 btnEquals.addEventListener('click', () => {
     calculator.calculate();
+})
+
+btnDelete.addEventListener('click', () => {
+    calculator.delete();
 })

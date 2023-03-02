@@ -20,7 +20,7 @@ body {
   border-radius: 2rem;
   box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
   height: 532px;
-  max-width: 300px;
+  width: 300px;
 }
 .container-title {
   color: #FFF;
@@ -33,6 +33,7 @@ body {
   color: #979696;
   text-align: right;
   padding-right: 1rem;
+  height: 20px;
 }
 .container-current-operand {
   color: #FFF;

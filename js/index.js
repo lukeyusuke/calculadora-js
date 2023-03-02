@@ -22,8 +22,8 @@ class Calculator {
         if (this.currentOperand.innerText.includes(".") && button === ".") return;
         this.currentOperand.innerText += button;
 
-        const operations = ["+", "-", "x", "÷"]
-
+        const operations = ["+", "-", "x", "÷"];
+    
         for(const operation of operations){
             if(this.currentOperand.innerText.includes(operation)){
                 this.previousOperand.innerText = `${this.currentOperand.innerText} `;
@@ -33,11 +33,28 @@ class Calculator {
     }
 
     calculate(){
-        let resul;
         const _previousOperand = parseFloat(this.previousOperand.innerText);
         const _currentOperand = parseFloat(this.currentOperand.innerText);
 
-        // entender lógica para +, -,  x, dividir
+        if(previousOperand.innerText.includes("+")){
+            this.previousOperand.innerText = `${_previousOperand} + ${_currentOperand} =`;
+            this.currentOperand.innerText = _previousOperand + _currentOperand;
+        }
+
+        if(previousOperand.innerText.includes("-")){
+            this.previousOperand.innerText = `${_previousOperand} - ${_currentOperand} =`;
+            this.currentOperand.innerText = _previousOperand - _currentOperand;
+        }
+
+        if(previousOperand.innerText.includes("x")){
+            this.previousOperand.innerText = `${_previousOperand} x ${_currentOperand} =`;
+            this.currentOperand.innerText = _previousOperand * _currentOperand;
+        }
+
+        if(previousOperand.innerText.includes("÷")){
+            this.previousOperand.innerText = `${_previousOperand} ÷ ${_currentOperand} =`;
+            this.currentOperand.innerText = _previousOperand / _currentOperand;
+        }
     }
 }
 
@@ -57,7 +74,3 @@ btnAllClear.addEventListener('click', () => {
 btnEquals.addEventListener('click', () => {
     calculator.calculate();
 })
-
-// 2 Lógicas
-// 1 - Separar números e operações
-// 2 - Não separar números e operações (Estou fazendo essa);

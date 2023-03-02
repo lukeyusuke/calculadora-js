@@ -1,3 +1,5 @@
+'use strict'
+
 const buttons = document.querySelectorAll('[data-button]')
 const btnDelete = document.querySelector('[data-delete]')
 const btnAllClear = document.querySelector('[data-all-clear]');
@@ -32,28 +34,43 @@ class Calculator {
         }
     }
 
-    calculate(){
+    chooseOperation(){    
+        let operation = "";
+    
+        if(previousOperand.innerText.includes("+")){
+            operation = '+';
+        } else if (previousOperand.innerText.includes("-")){
+            operation = '-';
+        } else if (previousOperand.innerText.includes("x")){
+            operation = 'x';
+        } else {
+            operation = '÷';
+        }
+
+        this.calculate(operation);
+    }
+
+    calculate(operation){
         const _previousOperand = parseFloat(this.previousOperand.innerText);
         const _currentOperand = parseFloat(this.currentOperand.innerText);
 
-        if(previousOperand.innerText.includes("+")){
-            this.previousOperand.innerText = `${_previousOperand} + ${_currentOperand} =`;
-            this.currentOperand.innerText = _previousOperand + _currentOperand;
-        }
-
-        if(previousOperand.innerText.includes("-")){
-            this.previousOperand.innerText = `${_previousOperand} - ${_currentOperand} =`;
-            this.currentOperand.innerText = _previousOperand - _currentOperand;
-        }
-
-        if(previousOperand.innerText.includes("x")){
-            this.previousOperand.innerText = `${_previousOperand} x ${_currentOperand} =`;
-            this.currentOperand.innerText = _previousOperand * _currentOperand;
-        }
-
-        if(previousOperand.innerText.includes("÷")){
-            this.previousOperand.innerText = `${_previousOperand} ÷ ${_currentOperand} =`;
-            this.currentOperand.innerText = _previousOperand / _currentOperand;
+        switch(operation){
+            case '+':
+                this.previousOperand.innerText = `${_previousOperand} + ${_currentOperand} =`;
+                this.currentOperand.innerText = _previousOperand + _currentOperand;
+            break;
+            case '-':
+                this.previousOperand.innerText = `${_previousOperand} - ${_currentOperand} =`;
+                this.currentOperand.innerText = _previousOperand - _currentOperand;
+            break;
+            case 'x':
+                this.previousOperand.innerText = `${_previousOperand} x ${_currentOperand} =`;
+                this.currentOperand.innerText = _previousOperand * _currentOperand;
+            break;
+            case '÷':
+                this.previousOperand.innerText = `${_previousOperand} ÷ ${_currentOperand} =`;
+                this.currentOperand.innerText = _previousOperand / _currentOperand;
+            break;
         }
     }
 
@@ -75,7 +92,7 @@ btnAllClear.addEventListener('click', () => {
 })
 
 btnEquals.addEventListener('click', () => {
-    calculator.calculate();
+    calculator.chooseOperation();
 })
 
 btnDelete.addEventListener('click', () => {

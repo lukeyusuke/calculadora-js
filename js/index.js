@@ -1,5 +1,3 @@
-'use strict'
-
 const buttons = document.querySelectorAll('[data-button]')
 const btnDelete = document.querySelector('[data-delete]')
 const btnAllClear = document.querySelector('[data-all-clear]');

@@ -39,6 +39,10 @@
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
         
+        .span-two{
+            grid-column: span 2;
+        }
+
         button{
             background-color: variables.$bg-color;
             border: none;
@@ -53,8 +57,9 @@
 
         }
 
-        button:nth-child(17){
+        button:nth-child(16){
             border-radius: 0 0 0 2rem;
+            grid-column: span 2;
         }
 
         button:last-child{
